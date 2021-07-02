@@ -1,15 +1,15 @@
 const Discord = require('discord.js');
-
+const Levels = require('discord-xp');
 const mongoose = require('./database/mongoose');
 const fs = require('fs');
 
 
 const {
 	token,
-	prefix
+	password
 } = require('./config.json')
 const client = new Discord.Client();
-
+Levels.setURL(`mongodb+srv://discordbot:${password}@bot.awqta.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
