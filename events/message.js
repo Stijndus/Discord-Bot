@@ -13,7 +13,7 @@ module.exports = {
         const command = client.commands.get(commandName);
 
         try{
-            command.execute(message, args, Discord, client);
+            command.execute(message, args, client, Discord);
         } catch(err){
             console.log(err);
         }
