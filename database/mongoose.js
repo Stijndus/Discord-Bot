@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const {password} = require('../config.json');
+const {
+    password
+} = require('../config.json');
 module.exports = {
     init: () => {
         const dbOptions = {
@@ -22,7 +24,7 @@ module.exports = {
         mongoose.connection.on('disconnected', () => {
             console.log('disconnected');
         })
-        
+
         mongoose.connection.on('Error', () => {
             console.log('Error: ' + err);
         })

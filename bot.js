@@ -1,20 +1,23 @@
 const Discord = require('discord.js');
-const { DESTRUCTION } = require('dns');
+
 const mongoose = require('./database/mongoose');
 const fs = require('fs');
 
 
-const {token,prefix} = require('./config.json')
+const {
+	token,
+	prefix
+} = require('./config.json')
 const client = new Discord.Client();
 
-client.commands =  new Discord.Collection();
+client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 
-for(const file of commandFiles){
-    const command = require(`./commands/${file}`);
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
 
-    client.commands.set(command.name, command);
+	client.commands.set(command.name, command);
 }
 
 const eventFiles = fs.readdirSync('./events/').filter(file => file.endsWith('.js'));
