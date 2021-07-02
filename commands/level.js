@@ -13,7 +13,7 @@ module.exports = {
 
 
         try {
-            message.channel.send(`@${mentionedMember.user.tag} is level ${target.level} and has ${target.xp}/${Levels.xpFor(target.level + 1)}`);
+            message.channel.send(`${mentionedMember.user.username} is level ${target.level} and has ${target.xp}/${Levels.xpFor(target.level + 1)}`);
         } catch (err) {
             console.log(err);
         }
