@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const {password} = require('..config.json');
+const {password} = require('../config.json');
 module.exports = {
     init: () => {
         const dbOptions = {
@@ -11,7 +11,7 @@ module.exports = {
             family: 4,
         };
 
-        mongoose.connect(`mongodb+srv://discordbot:${password}@bot.awqta.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
+        mongoose.connect(`mongodb+srv://discordbot:${password}@bot.awqta.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, dbOptions);
         mongoose.set('useFindAndModify', false);
         mongoose.Promise = global.Promise;
 

@@ -1,6 +1,22 @@
+const {prefix} = require('../config.json');
+
 module.exports = {
 	name: 'message',
-	execute(message) {
-		console.log(`${message.author.tag} in #${message.channel.name} sent: ${message.content}`);
-	},
+	execute(message, client, Discord) {
+		if(!message.content.startsWith(prefix) || message.author.bot || message.channel.type == 'bot') return;
+
+        const args = message.content.slice(prefix.length).split(/ + /);
+        const commandName = args.shift().toLowerCase();
+
+        if(!client.commands.has(commandName)) return;
+
+        const command = client.commands.get(commandName);
+
+        try{
+            command.execute(message, args, Discord, client);
+        } catch(err){
+            console.log(err);
+        }
+
+	}
 };
