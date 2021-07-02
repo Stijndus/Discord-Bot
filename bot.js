@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const { DESTRUCTION } = require('dns');
 const fs = require('fs');
 
 
@@ -26,6 +27,10 @@ client.on('message', message =>{
 
     if(command === "ping"){
         client.commands.get('ping').execute(message, args);
+    } else if(command === "twitch"){
+        client.commands.get('twitch').execute(message, args);
+    } else if(command === "socials"){
+        client.commands.get('socials').execute(message, args, Discord);
     }
 })
 
