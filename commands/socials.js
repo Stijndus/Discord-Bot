@@ -2,7 +2,7 @@
 module.exports = {
     name: 'socials',
     description: 'All my socials',
-    execute(message, args, Discord) {
+    execute(message, args, Discord, client) {
         const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Socials')
