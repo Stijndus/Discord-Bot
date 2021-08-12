@@ -15,17 +15,19 @@ module.exports = {
             const user = await Levels.fetch(message.author.id, message.guild.id);
             message.channel.send(`${message.member}, you have leveled up to ${user.level}! :confetti_ball: :confetti_ball: `)
         }
+
         if (!message.content.startsWith(prefix)) return
 
         
 
         const args = message.content.slice(prefix.length).split(" ");
+
         const commandName = args.shift().toLowerCase();
 
-        if (!client.commands.has(commandName)) return;
+        if (!client.commands.has(commandName) && !client.commands.find(a => a.aliases && a.aliases.includes(commandName))) return;
 
         
-        const command = client.commands.get(commandName);
+        const command = client.commands.get(commandName) || client.commands.find(a => a.aliases && a.aliases.includes(commandName));
 
         try {
             command.execute(message, args,  Discord, client);

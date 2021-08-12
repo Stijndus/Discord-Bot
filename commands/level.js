@@ -2,6 +2,7 @@ const Levels = require('discord-xp');
 
 module.exports = {
     name: 'level',
+    aliases: ['lvl'],
     description: 'Gives your levl',
     async execute(message, args, Discord, client) {
         let mentionedMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]);

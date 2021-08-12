@@ -2,6 +2,7 @@ const Levels = require('discord-xp');
 
 module.exports = {
     name: 'leaderboard',
+    aliases: ['lb', 'standings'],
     description: 'Displays the servers top 10 leveled users',
     async execute(message, args, Discord, client) {
         const rawLeaderboard = await Levels.fetchLeaderboard(message.guild.id, 10); // We grab top 10 users with most xp in the current server.
