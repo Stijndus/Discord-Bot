@@ -13,7 +13,7 @@ module.exports = {
             family: 4,
         };
 
-        mongoose.connect(`mongodb+srv://discordbot:${password}@bot.awqta.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, dbOptions);
+        mongoose.connect(`mongodb+srv://discordbot:${process.env.PASSWORD}@bot.awqta.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`, dbOptions);
         mongoose.set('useFindAndModify', false);
         mongoose.Promise = global.Promise;
 
