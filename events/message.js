@@ -1,6 +1,4 @@
-const {
-    prefix
-} = require('../config.json');
+
 
 const Levels = require('discord-xp');
 
