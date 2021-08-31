@@ -4,10 +4,6 @@ const mongoose = require('./database/mongoose');
 const fs = require('fs');
 
 
-const {
-	token,
-	password
-} = require('./config.json')
 const client = new Discord.Client();
 Levels.setURL(`mongodb+srv://discordbot:${process.env.PASSWORD}@bot.awqta.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
 client.commands = new Discord.Collection();

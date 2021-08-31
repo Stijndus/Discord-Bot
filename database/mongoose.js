@@ -1,7 +1,4 @@
 const mongoose = require('mongoose');
-const {
-    password
-} = require('../config.json');
 module.exports = {
     init: () => {
         const dbOptions = {
