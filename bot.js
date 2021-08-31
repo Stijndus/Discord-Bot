@@ -9,7 +9,7 @@ const {
 	password
 } = require('./config.json')
 const client = new Discord.Client();
-Levels.setURL(`mongodb+srv://discordbot:${password}@bot.awqta.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
+Levels.setURL(`mongodb+srv://discordbot:${process.env.PASSWORD}@bot.awqta.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
@@ -31,4 +31,4 @@ for (const file of eventFiles) {
 	}
 }
 
-client.login(token);
+client.login(process.env.TOKEN);
