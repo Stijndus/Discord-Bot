@@ -30,7 +30,7 @@ module.exports = {
         const command = client.commands.get(commandName) || client.commands.find(a => a.aliases && a.aliases.includes(commandName));
 
         try {
-            command.execute(message, args,  Discord, client);
+            command.execute(message, args,  Discord, client, command);
         } catch (err) {
             console.log(err);
         }

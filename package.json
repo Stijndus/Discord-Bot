@@ -17,9 +17,13 @@
   },
   "homepage": "https://github.com/Stijndus/Discord-Bot#readme",
   "dependencies": {
+    "@discordjs/opus": "^0.6.0",
     "discord-xp": "^1.1.16",
     "discord.js": "^12.5.3",
+    "ffmpeg-static": "^4.4.0",
     "fs": "0.0.1-security",
-    "mongoose": "^5.11.14"
+    "mongoose": "^5.11.14",
+    "yt-search": "^2.10.1",
+    "ytdl-core": "^4.9.1"
   }
 }
