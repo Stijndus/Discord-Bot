@@ -1,5 +1,4 @@
-
-
+const { prefix } = require('../config.json')
 const Levels = require('discord-xp');
 
 module.exports = {
@@ -14,7 +13,7 @@ module.exports = {
             message.channel.send(`${message.member}, you have leveled up to ${user.level}! :confetti_ball: :confetti_ball: `)
         }
 
-        if (!message.content.startsWith(process.env.PREFIX)) return
+        if (!message.content.startsWith(prefix)) return
 
         
 
